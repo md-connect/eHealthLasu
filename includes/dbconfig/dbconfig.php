@@ -12,12 +12,17 @@
     //echo "Database connection successful";
   } else {
     die('
-        <div class="card-body">
-        <h1 class="card-title bg-warning">Database Connection Error</h1>
-        <h2 class="card-title">Database Failure</h2>
-        <p class="card-text"> Please Check Your Databse Connection</p>
-        <a href="index.php" class="btn btn-primary">Back to Homepage</a>
-        <hr>
-        </div>
+        <div class="center"> 
+    <h4>>Database Connection Error</h4>
+    <h6>Please Check Your Databse Connection</h6>
+    <a href="index.php" class="btn btn-primary">Back to Homepage</a>
+  </div>
         ' . mysqli_connect_error());
   }
+
+
+  // <div class="center"> 
+  //   <h4>>Database Connection Error</h4>
+  //   <h6>Please Check Your Databse Connection</h6>
+  //   <a href="index.php" class="btn btn-primary">Back to Homepage</a>
+  // </div>
