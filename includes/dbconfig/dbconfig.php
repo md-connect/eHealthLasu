@@ -13,16 +13,9 @@
   } else {
     die('
         <div class="center"> 
-    <h4>>Database Connection Error</h4>
+    <h4>Database Connection Failure</h4>
     <h6>Please Check Your Databse Connection</h6>
     <a href="index.php" class="btn btn-primary">Back to Homepage</a>
   </div>
         ' . mysqli_connect_error());
   }
-
-
-  // <div class="center"> 
-  //   <h4>>Database Connection Error</h4>
-  //   <h6>Please Check Your Databse Connection</h6>
-  //   <a href="index.php" class="btn btn-primary">Back to Homepage</a>
-  // </div>
