@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/materialize/css/materialize.css" />
+    <link rel="stylesheet" href="../assets/materialize/css/admin.css" />
+    <link rel="stylesheet" href="../assets/iconfont/material-icons.css" />
+    <link rel="stylesheet" href="../assets/stepper/css/mstepper.min.css" />
+    
+
+
+    <style>
+        .select2 .selection .select2-selection--single,
+        .select2-container--default .select2-search--dropdown .select2-search__field {
+            border-width: 0 0 1px 0 !important;
+            border-radius: 0 !important;
+            height: 2.05rem;
+        }
+
+        .select2-container--default .select2-selection--multiple,
+        .select2-container--default.select2-container--focus .select2-selection--multiple {
+            border-width: 0 0 1px 0 !important;
+            border-radius: 0 !important;
+        }
+
+        .select2-results__option {
+            color: #26a69a;
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #eee !important;
+            color: #26a69a !important;
+        }
+
+        .select2-container--default .select2-results__option[aria-selected=true] {
+            background-color: #e1e1e1 !important;
+        }
+
+        .select2-dropdown {
+            border: none !important;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .select2-container--default .select2-results__option[role=group] .select2-results__group {
+            background-color: #333333;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center">Select2 Sample</h1>
+    <div class="input-field col s12">
+        <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+    </div>
+    <br><br>
+    <!-- php CI model code, convert string to date -->
+    <!-- 'bdate' => date("Y-m-d", strtotime($this->input->post('bdate'))) -->
+    <div class="container">
+        <br><br><br><br><br><br><br>
+        <div class="col s12 m10 offset-m1 l6 offset-l3">
+
+            <div class="row">
+                <form action="" class="col s12 m8 offset-m2 l6 offset-l3">
+                    <div class="row">
+                        <div class="input-field">
+                            <input type=text name="bdate" id="bdate" class="datepicker" required>
+                            <label for="bdate">Birthday</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input name="email" id="email" type="text" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- jQuery -->
+
+        <script src="../assets/materialize/js/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <script src="../assets/materialize/js/materialize.js"></script>
+        <script>
+            var currYear = (new Date()).getFullYear();
+            var dataIWantToShow = '1';
+            $(document).ready(function () {
+                $('.datepicker').on('mousedown', function (event) {
+                    event.preventDefault();
+                });
+                
+                $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15, // Creates a dropdown of 15 years to control year,
+                    
+                    closeOnSelect: true, // Close upon selecting a date,
+                    dateFormat: 'dd/mm/yyyy',
+
+                    
+                });
+                $('.select2').select2({
+                    templateResult: function (option) {
+                        var myOption = $('.select2').find('option[value="' + option.id + '"');
+                        if (myOption.data('show') == dataIWantToshow) {
+                            return option.text;
+                        }
+                        return false;
+                    }
+                });
+                 
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+<div class="row">
+    <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+            <img src="http:placehold.it/250x250?text=first image" alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Test 1</p>
+                <p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="http://placehold.it/250x250?text=first image"
+                        data-hidden="I am hidden 1">Model</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+            <img src="http:placehold.it/250x250?text=second image" alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Test 2</p>
+                <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="http://placehold.it/250x250?text=second image"
+                        data-hidden="I am hidden 2">Model</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+            <img src="http:placehold.it/250x250?text=thired image" alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Test 3</p>
+                <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="http://placehold.it/250x250?text=thired image"
+                        data-hidden="I am hidden 3">Model</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+            </div>
+            <div class="modal-body">
+                <img src="" id="image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+var button = $(event.relatedTarget) // Button that triggered the modal
+var recipient = button.data('whatever') // Extract info from data-* attributes
+// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+var hiddenVal = button.data('hidden')
+alert(hiddenVal);
+var modal = $(this)
+modal.find('.modal-body #image').attr('src',recipient)
+})
+</body>
+
+</html>

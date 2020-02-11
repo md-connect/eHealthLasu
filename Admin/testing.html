@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1 class="text-center">Testing Date Picker</h1>
+
+        <!-- Customize DatePicker in the materialize.js -->
+<!--<script src="http://gnuhacker.com/materialize.js"></script>-->
+  <input type="date" class="datepicker"  data-value="2015-08-01"></div>
+<input type="time" class="timepicker"  value="3:00 PM">
+
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+
+<div class="col s12">
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="card material-table">
+                <div class="table-header">
+                    <span class="table-title">RESEARCH ON DISEASES TREATED</span>
+                    <div class="actions">
+                        <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i
+                                class="material-icons">search</i></a>
+                    </div>
+                </div>
+                <table class="centered browser-default" id="datatable">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>CODE</th>
+                            <th>DISEASES</th>
+                            <th>CARD NO</th>
+                            <th>FULL NAME</th>
+                            <th>ADDRESS</th>
+                            <th>PATIENT TYPE</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                 /*  if ($db_config) { */
+
+                    $query_user1 = "SELECT * FROM disease_stats";
+                    $results = mysqli_query($conn, $query_user1);
+                    /*  if (mysqli_num_rows($results) > 0) { */
+                    while ($user = mysqli_fetch_assoc($results)) {
+
+                      ?>
+                        <tr>
+                            <td><?php echo $user["id"]; ?></td>
+                            <td><?php echo $user["code"]; ?></td>
+                            <td><?php echo $user["descriptions"]; ?></td>
+                            <td><?php echo $user["card_no"]; ?></td>
+                            <td><?php echo $user["card_no"]; ?></td>
+                            <td><?php echo $user["gender"]; ?></td>
+                            <td><?php echo $user["pat_type"]; ?></td>
+                            <td><?php echo $user["diagnosis_date"]; ?></td>
+
+                            <?php
+                      }
+                      //}
+                    //}
+                    ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

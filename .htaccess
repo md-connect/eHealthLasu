@@ -1,0 +1,2 @@
+#This is 404 Error Page to show
+ErrorDocument 404 http://localhost/projects/eHealthLasu/404.php
