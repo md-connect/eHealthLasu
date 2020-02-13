@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>eHealthLasu Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/lasuplus.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/lasuplus.png">
     <link rel="stylesheet" href="assets/materialize/css/materialize.css" />
     <link rel="stylesheet" href="assets/iconfont/material-icons.css" />
     <link rel="stylesheet" href="assets/materialize/css/style.css" />

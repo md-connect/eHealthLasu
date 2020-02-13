@@ -133,7 +133,7 @@ if (isset($_POST['submit'])) {
 		$spouse_passport = $_FILES['spouse_passport']['name'];
 		$temp2 = $_FILES['spouse_passport']['tmp_name'];
 		$types2 = $_FILES['spouse_passport']['type'];
-		$spouse_password = password_hash($spouse_surname, PASSWORD_DEFAULT);
+		$spouse_password = md5($spouse_surname);
 
 		/* Checking if staff records already exist */
 		$confirmQuery = "SELECT * FROM patient_record WHERE identity='$identity' ";

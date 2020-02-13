@@ -68,7 +68,7 @@ $status = "";
                             <form action="" method="GET" class="row" id="forgotpwd_form">
                                 <div class="input-field col s12">
                                     <input id="icon_prefix" type="text" name="identity" class="validate" />
-                                    <label for="identity">Matric No/Staff No</label>
+                                    <label for="identity">Hospital No/Matric No/Staff No</label>
                                 </div>
                                 <div id="identity_validate"></div>
                                 <div class="input-field col s12">
@@ -96,11 +96,12 @@ $status = "";
         $(document).ready(function() {
             $('.datepicker').pickadate({
                 selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                selectYears: 105, // Creates a dropdown of 15 years to control year,
                 format: 'yyyy-mm-dd',
                 today: 'Today',
                 clear: 'Clear',
                 close: 'Ok',
+                max: true,
                 closeOnSelect: false // Close upon selecting a date,
 
             });
@@ -110,14 +111,14 @@ $status = "";
             $('#forgotpwd_form').validate({
                 rules: {
                     identity: {
-                        minlength: 8,
-                        maxlength: 10,
+                        minlength: 4,
+                        maxlength: 15,
                         required: true
                     },
                     dob: {
                         required: true,
                         date: true,
-                        minlength: 10
+                        minlength: 8
                     }
 
                 },
